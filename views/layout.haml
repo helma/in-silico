@@ -1,0 +1,38 @@
+!!!
+%html
+  %head
+    %meta{ :content => "text/html; charset=us-ascii", "http-equiv" => "content-type" }
+    %meta{ :name => "robots", :content => "all" }
+    %meta{ :name => "author", :content => "Christoph Helma, Andreas Maunz" }
+    %link{:rel=>'stylesheet', :href=>'/style.css', :type => "text/css"}       
+    %title in silico toxicology
+
+  %body
+    .header
+      .logo
+        %img{ :src => "/logo.jpg", :alt => "in silico toxicology" }
+        %br research + consulting
+      .index
+        %ul
+          %li
+            %a{ :href => "/" } Home
+          %li
+            %a{ :href => "/software" } Software
+          %li
+            %a{ :href => "/services" } Services
+          %li
+            %a{ :href => "/publications" } Publications
+          %li
+            %a{ :href => "/awards" } Awards
+          %li
+            %a{ :href => "/links" } Links
+          %li
+            %a{ :href => "/contact" } Contact
+
+    .content
+      = yield
+
+    .footer
+      &copy;
+      %a{ :href => "http://www.in-silico.ch/" } in silico toxicology
+      2004-2009
