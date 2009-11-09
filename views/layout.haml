@@ -14,19 +14,19 @@
         %br research + consulting
       .index
         %ul
-          %li
+          %li{:class => ("selected" if /^\/$/ =~ request.path )}
             %a{ :href => "/" } Home
-          %li
+          %li{:class => ("selected" if /software/ =~ request.path )}
             %a{ :href => "/software" } Software
-          %li
+          %li{:class => ("selected" if /services/ =~ request.path )}
             %a{ :href => "/services" } Services
-          %li
+          %li{:class => ("selected" if /publications/ =~ request.path )}
             %a{ :href => "/publications" } Publications
-          %li
+          %li{:class => ("selected" if /awards/ =~ request.path )}
             %a{ :href => "/awards" } Awards
-          %li
+          %li{:class => ("selected" if /links/ =~ request.path )}
             %a{ :href => "/links" } Links
-          %li
+          %li{:class => ("selected" if /contact/ =~ request.path )}
             %a{ :href => "/contact" } Contact
 
     .content

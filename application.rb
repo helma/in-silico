@@ -6,27 +6,27 @@ get '/?' do
 	haml :index
 end
 
-get '/software' do
+get '/software/?' do
 	haml :software
 end
 
-get '/services' do
+get '/services/?' do
 	haml :services
 end
 
-get '/publications' do
+get '/publications/?' do
 	haml :publications
 end
 
-get '/contact' do
+get '/contact/?' do
 	haml :contact
 end
 
-get '/links' do
+get '/links/?' do
 	haml :links
 end
 
-get '/awards' do
+get '/awards/?' do
 	haml :awards
 end
 
