@@ -11,7 +11,8 @@
     .header
       .logo
         %img{ :src => "/logo.jpg", :alt => "in silico toxicology" }
-        %br research + consulting
+        .desc
+          research + consulting
       .index
         %ul
           %li{:class => ("selected" if /^\/$/ =~ request.path )}

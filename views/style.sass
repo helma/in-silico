@@ -1,25 +1,38 @@
 body
-  background-color: grey
-
+  background-color: white
+  min-width: 50em
+  max-width: 50em
+  
   .header
-    :background-color blue
+    background-color: white
 
     .logo
-      :background-color orange
+      background-color: rgb(128,128,255)    
+      
+    .desc   	
+      display: inline
+      color: white
+      padding: 1px
 
     .index
-      :background-color red
-
+      background-color: rgb(128,128,255)
+     
       li
-        :display inline
-        &:hover
-          :background-color white
-
+        display: inline
+        padding: 1em 
+        &hover: red 
+      
       li.selected
-        :background-color green
+        background-color: white
+        color: black
 
   .content
-    :background-color yellow
-
+    background-color: white
+    padding: 0.5em
+    
+    
+      
   .footer
-    :background-color green
+    background-color: rgb(128,128,255)
+      
+    
