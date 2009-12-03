@@ -21,12 +21,12 @@
             %a{ :href => "/software" } Software
           %li{:class => ("selected" if /services/ =~ request.path )}
             %a{ :href => "/services" } Services
+          %li{:class => ("selected" if /projects/ =~ request.path )}
+            %a{ :href => "/projects" } Projects
           %li{:class => ("selected" if /publications/ =~ request.path )}
             %a{ :href => "/publications" } Publications
           %li{:class => ("selected" if /awards/ =~ request.path )}
             %a{ :href => "/awards" } Awards
-          %li{:class => ("selected" if /links/ =~ request.path )}
-            %a{ :href => "/links" } Links
           %li{:class => ("selected" if /contact/ =~ request.path )}
             %a{ :href => "/contact" } Contact
 

@@ -14,6 +14,10 @@ get '/services/?' do
 	haml :services
 end
 
+get '/projects/?' do
+	haml :projects
+end
+
 get '/publications/?' do
 	haml :publications
 end
@@ -31,6 +35,6 @@ get '/awards/?' do
 end
 
 get '/style.css' do
-	header 'Content-Type' => 'text/css; charset=utf-8'
+	headers 'Content-Type' => 'text/css; charset=utf-8'
 	sass :style
 end
