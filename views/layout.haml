@@ -8,27 +8,26 @@
     %title in silico toxicology
 
   %body
-    .header
-      .logo
-        %img{ :src => "/logo.jpg", :alt => "in silico toxicology" }
-        .desc
-          research + consulting
-      .index
-        %ul
-          %li{:class => ("selected" if /^\/$/ =~ request.path )}
-            %a{ :href => "/" } Home
-          %li{:class => ("selected" if /software/ =~ request.path )}
-            %a{ :href => "/software" } Software
-          %li{:class => ("selected" if /services/ =~ request.path )}
-            %a{ :href => "/services" } Services
-          %li{:class => ("selected" if /projects/ =~ request.path )}
-            %a{ :href => "/projects" } Projects
-          %li{:class => ("selected" if /publications/ =~ request.path )}
-            %a{ :href => "/publications" } Publications
-          %li{:class => ("selected" if /awards/ =~ request.path )}
-            %a{ :href => "/awards" } Awards
-          %li{:class => ("selected" if /contact/ =~ request.path )}
-            %a{ :href => "/contact" } Contact
+    .logo
+      %em in silico
+      %code toxicology
+      -#%img{ :src => "/logo.jpg", :alt => "in silico toxicology" }
+    .index
+      %ul
+        %li{:class => ("selected" if /^\/$/ =~ request.path )}
+          %a{ :href => "/" } Home
+        %li{:class => ("selected" if /software/ =~ request.path )}
+          %a{ :href => "/software" } Software
+        %li{:class => ("selected" if /services/ =~ request.path )}
+          %a{ :href => "/services" } Services
+        %li{:class => ("selected" if /projects/ =~ request.path )}
+          %a{ :href => "/projects" } Projects
+        %li{:class => ("selected" if /publications/ =~ request.path )}
+          %a{ :href => "/publications" } Publications
+        %li{:class => ("selected" if /awards/ =~ request.path )}
+          %a{ :href => "/awards" } Awards
+        %li{:class => ("selected" if /contact/ =~ request.path )}
+          %a{ :href => "/contact" } Contact
 
     .content
       = yield
