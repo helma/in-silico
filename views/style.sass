@@ -1,12 +1,12 @@
-!fg = #333333
-!bg = #B9DCFF
-!hl = yellow
+$fg: #333333
+$bg: #B9DCFF
+$hl: yellow
 
 body
   margin: 3em
   font-family: Verdana
   background-color: white
-  color = !fg
+  color: $fg
   
   .logo
     margin: 0.5em
@@ -41,22 +41,22 @@ body
         padding-right: 0.5em
         a
           text-decoration: none
-          color = !bg
+          color: $bg
           &:hover
-            color = !hl
+            color: $hl
       
       li.selected
-        background-color = !bg
+        background-color: $bg
         border-bottom:
-          color = !bg
+          color: $bg
         a
           text-decoration: none
-          color = !fg
+          color: $fg
           &:hover
-            color = !hl
+            color: $hl
 
   .content
-    background-color = !bg
+    background-color: $bg
     padding: 1.5em
     padding-top: 2.5em
     border: 1px solid white
