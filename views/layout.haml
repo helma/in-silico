@@ -14,18 +14,27 @@
     .index
       %ul
         %li{:class => ("selected" if /^\/$/ =~ request.path )}
-          %a{ :href => "/" } Home
-        %li{:class => ("selected" if /software/ =~ request.path )}
-          %a{ :href => "/software" } Software
-        %li{:class => ("selected" if /services/ =~ request.path )}
-          %a{ :href => "/services" } Services
-        %li{:class => ("selected" if /projects/ =~ request.path )}
-          %a{ :href => "/projects" } Projects
+          %a{ :href => "/" } Software and services
+        %li{:class => ("selected" if /commercial/ =~ request.path )}
+          %a{ :href => "/commercial" } Commercial
         %li{:class => ("selected" if /publications/ =~ request.path )}
           %a{ :href => "/publications" } Publications
+        %li{:class => ("selected" if /blog/ =~ request.path )}
+          %a{ :href => "/blog" } Blog
+        %li{:class => ("selected" if /projects/ =~ request.path )}
+          %a{ :href => "/projects" } Projects
         %li{:class => ("selected" if /awards/ =~ request.path )}
           %a{ :href => "/awards" } Awards
-        %li{:class => ("selected" if /contact/ =~ request.path )}
+        %li{:class => ("selected" if /about/ =~ request.path )}
+          %a{ :href => "/about" } About
+        / 
+          %li{:class => ("selected" if /^\/$/ =~ request.path )}
+          %a{ :href => "/" } Home
+          %li{:class => ("selected" if /software/ =~ request.path )}
+          %a{ :href => "/software" } 
+          %li{:class => ("selected" if /services/ =~ request.path )}
+          %a{ :href => "/services" } Products and Services
+          %li{:class => ("selected" if /contact/ =~ request.path )}
           %a{ :href => "/contact" } Contact
 
     .content
@@ -34,4 +43,4 @@
     .footer
       &copy;
       %a{ :href => "http://www.in-silico.ch/" } in silico toxicology gmbh
-      2004-2011
+      2004-#{Time.now.year}

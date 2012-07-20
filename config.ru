@@ -1,6 +1,6 @@
 require 'rubygems'
 require 'sinatra'
-require 'application.rb'
+require './application.rb'
 
 if ENV["RACK_ENV"] == 'production'
 	FileUtils.mkdir_p 'log' unless File.exists?('log')
