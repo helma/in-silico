@@ -53,3 +53,4 @@ get '/style.css' do
 	#headers 'Content-Type' => 'text/css; charset=utf-8'
 	sass :style
 end
+
