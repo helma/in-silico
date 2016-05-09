@@ -4,38 +4,53 @@
     %meta{ :content => "text/html; charset=us-ascii", "http-equiv" => "content-type" }
     %meta{ :name => "robots", :content => "all" }
     %meta{ :name => "author", :content => "Christoph Helma, Andreas Maunz, Denis Gebele" }
+    %script{:src=>"/javascripts/jquery.min.js"}
+    %script{:src=>"/javascripts/bootstrap.min.js"}
+    %script{:src=>"/javascripts/ist.js"}
+    %link{:rel=>'stylesheet', :href=>'/css/bootstrap.min.css', :type => "text/css"}       
     %link{:rel=>'stylesheet', :href=>'/style.css', :type => "text/css"}       
     %title in silico toxicology
 
   %body
-    .logo
-      %em in silico
-      toxicology gmbh
-    .index
-      %ul
-        %li{:class => ("selected" if /^\/$/ =~ request.path )}
-          %a{ :href => "/" } Software and services
-        %li{:class => ("selected" if /commercial/ =~ request.path )}
-          %a{ :href => "/commercial" } Commercial
-        %li{:class => ("selected" if /publications/ =~ request.path )}
-          %a{ :href => "/publications" } Publications
-        %li{:class => ("selected" if /blog/ =~ request.path )}
-          %a{ :href => "/blog" } Blog
-        %li{:class => ("selected" if /projects/ =~ request.path )}
-          %a{ :href => "/projects" } Projects
-        %li{:class => ("selected" if /awards/ =~ request.path )}
-          %a{ :href => "/awards" } Awards
-        %li{:class => ("selected" if /about/ =~ request.path )}
-          %a{ :href => "/about" } About
-        / 
-          %li{:class => ("selected" if /^\/$/ =~ request.path )}
-          %a{ :href => "/" } Home
-          %li{:class => ("selected" if /software/ =~ request.path )}
-          %a{ :href => "/software" } 
-          %li{:class => ("selected" if /services/ =~ request.path )}
-          %a{ :href => "/services" } Products and Services
-          %li{:class => ("selected" if /contact/ =~ request.path )}
-          %a{ :href => "/contact" } Contact
+    %header.page-header
+      %div.row
+        %div.col-md-2
+          %img.media-object{:src=>"/images/IST_logo_s.png", :alt=>"logo", :width=>"120px", :style=>"margin:0 3em 0 2em;"}
+        %div.col-md-10
+          %h1.media-heading{:style=>"text-align:right;"}
+            %em in silico 
+            toxicology gmbh
+    #nav.navbar.navbar-default
+      %div.navbar-header
+        %button.navbar-toggle{:type=>"button", :data=>{:toggle=>"collapse", :target=>"#navbar"}}
+          %span{:class=>"icon-bar"}
+          %span{:class=>"icon-bar"}
+          %span{:class=>"icon-bar"}
+      #navbar.navbar-collapse.collapse
+        %ul.nav.navbar-nav
+          %li{:class => ("active" if /^\/$/ =~ request.path )}
+            %a{ :href => "/" } Software and services
+          %li{:class => ("active" if /commercial/ =~ request.path )}
+            %a{ :href => "/commercial" } Commercial
+          %li{:class => ("active" if /publications/ =~ request.path )}
+            %a{ :href => "/publications" } Publications
+          %li{:class => ("active" if /blog/ =~ request.path )}
+            %a{ :href => "/blog" } Blog
+          %li{:class => ("active" if /projects/ =~ request.path )}
+            %a{ :href => "/projects" } Projects
+          %li{:class => ("active" if /awards/ =~ request.path )}
+            %a{ :href => "/awards" } Awards
+          %li{:class => ("active" if /about/ =~ request.path )}
+            %a{ :href => "/about" } About
+          / 
+            %li{:class => ("active" if /^\/$/ =~ request.path )}
+            %a{ :href => "/" } Home
+            %li{:class => ("active" if /software/ =~ request.path )}
+            %a{ :href => "/software" } 
+            %li{:class => ("active" if /services/ =~ request.path )}
+            %a{ :href => "/services" } Products and Services
+            %li{:class => ("active" if /contact/ =~ request.path )}
+            %a{ :href => "/contact" } Contact
 
     .content
       = yield
