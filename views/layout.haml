@@ -34,6 +34,8 @@
             %a{ :href => "/commercial" } Commercial
           %li{:class => ("active" if /publications/ =~ request.path )}
             %a{ :href => "/publications" } Publications
+          %li{:class => ("active" if /presentations/ =~ request.path )}
+            %a{ :href => "/presentations" } Presentations
           %li{:class => ("active" if /blog/ =~ request.path )}
             %a{ :href => "/blog" } Blog
           %li{:class => ("active" if /projects/ =~ request.path )}
