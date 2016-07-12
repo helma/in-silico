@@ -1,0 +1,569 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.9.1: http://docutils.sourceforge.net/" />
+<meta name="version" content="S5 1.1" />
+<title>In silico methods for toxicity prediction</title>
+<meta name="author" content="Christoph Helma" />
+<meta name="date" content="2012-10-04" />
+<style type="text/css">
+
+/*
+:Author: David Goodger (goodger@python.org)
+:Id: $Id: html4css1.css 7434 2012-05-11 21:06:27Z milde $
+:Copyright: This stylesheet has been placed in the public domain.
+
+Default cascading style sheet for the HTML output of Docutils.
+
+See http://docutils.sf.net/docs/howto/html-stylesheets.html for how to
+customize this style sheet.
+*/
+
+/* used to remove borders from tables and images */
+.borderless, table.borderless td, table.borderless th {
+  border: 0 }
+
+table.borderless td, table.borderless th {
+  /* Override padding for "table.docutils td" with "! important".
+     The right padding separates the table cells. */
+  padding: 0 0.5em 0 0 ! important }
+
+.first {
+  /* Override more specific margin styles with "! important". */
+  margin-top: 0 ! important }
+
+.last, .with-subtitle {
+  margin-bottom: 0 ! important }
+
+.hidden {
+  display: none }
+
+a.toc-backref {
+  text-decoration: none ;
+  color: black }
+
+blockquote.epigraph {
+  margin: 2em 5em ; }
+
+dl.docutils dd {
+  margin-bottom: 0.5em }
+
+object[type="image/svg+xml"], object[type="application/x-shockwave-flash"] {
+  overflow: hidden;
+}
+
+/* Uncomment (and remove this text!) to get bold-faced definition list terms
+dl.docutils dt {
+  font-weight: bold }
+*/
+
+div.abstract {
+  margin: 2em 5em }
+
+div.abstract p.topic-title {
+  font-weight: bold ;
+  text-align: center }
+
+div.admonition, div.attention, div.caution, div.danger, div.error,
+div.hint, div.important, div.note, div.tip, div.warning {
+  margin: 2em ;
+  border: medium outset ;
+  padding: 1em }
+
+div.admonition p.admonition-title, div.hint p.admonition-title,
+div.important p.admonition-title, div.note p.admonition-title,
+div.tip p.admonition-title {
+  font-weight: bold ;
+  font-family: sans-serif }
+
+div.attention p.admonition-title, div.caution p.admonition-title,
+div.danger p.admonition-title, div.error p.admonition-title,
+div.warning p.admonition-title {
+  color: red ;
+  font-weight: bold ;
+  font-family: sans-serif }
+
+/* Uncomment (and remove this text!) to get reduced vertical space in
+   compound paragraphs.
+div.compound .compound-first, div.compound .compound-middle {
+  margin-bottom: 0.5em }
+
+div.compound .compound-last, div.compound .compound-middle {
+  margin-top: 0.5em }
+*/
+
+div.dedication {
+  margin: 2em 5em ;
+  text-align: center ;
+  font-style: italic }
+
+div.dedication p.topic-title {
+  font-weight: bold ;
+  font-style: normal }
+
+div.figure {
+  margin-left: 2em ;
+  margin-right: 2em }
+
+div.footer, div.header {
+  clear: both;
+  font-size: smaller }
+
+div.line-block {
+  display: block ;
+  margin-top: 1em ;
+  margin-bottom: 1em }
+
+div.line-block div.line-block {
+  margin-top: 0 ;
+  margin-bottom: 0 ;
+  margin-left: 1.5em }
+
+div.sidebar {
+  margin: 0 0 0.5em 1em ;
+  border: medium outset ;
+  padding: 1em ;
+  background-color: #ffffee ;
+  width: 40% ;
+  float: right ;
+  clear: right }
+
+div.sidebar p.rubric {
+  font-family: sans-serif ;
+  font-size: medium }
+
+div.system-messages {
+  margin: 5em }
+
+div.system-messages h1 {
+  color: red }
+
+div.system-message {
+  border: medium outset ;
+  padding: 1em }
+
+div.system-message p.system-message-title {
+  color: red ;
+  font-weight: bold }
+
+div.topic {
+  margin: 2em }
+
+h1.section-subtitle, h2.section-subtitle, h3.section-subtitle,
+h4.section-subtitle, h5.section-subtitle, h6.section-subtitle {
+  margin-top: 0.4em }
+
+h1.title {
+  text-align: center }
+
+h2.subtitle {
+  text-align: center }
+
+hr.docutils {
+  width: 75% }
+
+img.align-left, .figure.align-left, object.align-left {
+  clear: left ;
+  float: left ;
+  margin-right: 1em }
+
+img.align-right, .figure.align-right, object.align-right {
+  clear: right ;
+  float: right ;
+  margin-left: 1em }
+
+img.align-center, .figure.align-center, object.align-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.align-left {
+  text-align: left }
+
+.align-center {
+  clear: both ;
+  text-align: center }
+
+.align-right {
+  text-align: right }
+
+/* reset inner alignment in figures */
+div.align-right {
+  text-align: inherit }
+
+/* div.align-center * { */
+/*   text-align: left } */
+
+ol.simple, ul.simple {
+  margin-bottom: 1em }
+
+ol.arabic {
+  list-style: decimal }
+
+ol.loweralpha {
+  list-style: lower-alpha }
+
+ol.upperalpha {
+  list-style: upper-alpha }
+
+ol.lowerroman {
+  list-style: lower-roman }
+
+ol.upperroman {
+  list-style: upper-roman }
+
+p.attribution {
+  text-align: right ;
+  margin-left: 50% }
+
+p.caption {
+  font-style: italic }
+
+p.credits {
+  font-style: italic ;
+  font-size: smaller }
+
+p.label {
+  white-space: nowrap }
+
+p.rubric {
+  font-weight: bold ;
+  font-size: larger ;
+  color: maroon ;
+  text-align: center }
+
+p.sidebar-title {
+  font-family: sans-serif ;
+  font-weight: bold ;
+  font-size: larger }
+
+p.sidebar-subtitle {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+p.topic-title {
+  font-weight: bold }
+
+pre.address {
+  margin-bottom: 0 ;
+  margin-top: 0 ;
+  font: inherit }
+
+pre.literal-block, pre.doctest-block, pre.math, pre.code {
+  margin-left: 2em ;
+  margin-right: 2em }
+
+pre.code .ln { /* line numbers */
+  color: grey;
+}
+
+.code {
+  background-color: #eeeeee
+}
+
+span.classifier {
+  font-family: sans-serif ;
+  font-style: oblique }
+
+span.classifier-delimiter {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+span.interpreted {
+  font-family: sans-serif }
+
+span.option {
+  white-space: nowrap }
+
+span.pre {
+  white-space: pre }
+
+span.problematic {
+  color: red }
+
+span.section-subtitle {
+  /* font-size relative to parent (h1..h6 element) */
+  font-size: 80% }
+
+table.citation {
+  border-left: solid 1px gray;
+  margin-left: 1px }
+
+table.docinfo {
+  margin: 2em 4em }
+
+table.docutils {
+  margin-top: 0.5em ;
+  margin-bottom: 0.5em }
+
+table.footnote {
+  border-left: solid 1px black;
+  margin-left: 1px }
+
+table.docutils td, table.docutils th,
+table.docinfo td, table.docinfo th {
+  padding-left: 0.5em ;
+  padding-right: 0.5em ;
+  vertical-align: top }
+
+table.docutils th.field-name, table.docinfo th.docinfo-name {
+  font-weight: bold ;
+  text-align: left ;
+  white-space: nowrap ;
+  padding-left: 0 }
+
+h1 tt.docutils, h2 tt.docutils, h3 tt.docutils,
+h4 tt.docutils, h5 tt.docutils, h6 tt.docutils {
+  font-size: 100% }
+
+ul.auto-toc {
+  list-style-type: none }
+
+</style>
+<!-- configuration parameters -->
+<meta name="defaultView" content="slideshow" />
+<meta name="controlVis" content="hidden" />
+<!-- style sheet links -->
+<script src="ui/small-white/slides.js" type="text/javascript"></script>
+<link rel="stylesheet" href="ui/small-white/slides.css"
+      type="text/css" media="projection" id="slideProj" />
+<link rel="stylesheet" href="ui/small-white/outline.css"
+      type="text/css" media="screen" id="outlineStyle" />
+<link rel="stylesheet" href="ui/small-white/print.css"
+      type="text/css" media="print" id="slidePrint" />
+<link rel="stylesheet" href="ui/small-white/opera.css"
+      type="text/css" media="projection" id="operaFix" />
+
+<style type="text/css">
+#currentSlide {display: none;}
+</style>
+</head>
+<body>
+<div class="layout">
+<div id="controls"></div>
+<div id="currentSlide"></div>
+<div id="header">
+
+</div>
+<div id="footer">
+<h1>In silico methods for toxicity prediction</h1>
+<h2>2012-10-04 <em>in silico</em> toxicology gmbh</h2>
+</div>
+</div>
+<div class="presentation">
+<div class="slide" id="slide0">
+<h1 class="title">In silico methods for toxicity prediction</h1>
+<table class="docinfo" frame="void" rules="none">
+<col class="docinfo-name" />
+<col class="docinfo-content" />
+<tbody valign="top">
+<tr><th class="docinfo-name">Author:</th>
+<td>Christoph Helma</td></tr>
+<tr class="field"><th class="docinfo-name">Affiliation:</th><td class="field-body">in silico toxicology gmbh</td>
+</tr>
+<tr><th class="docinfo-name">Date:</th>
+<td>2012-10-04</td></tr>
+</tbody>
+</table>
+
+</div>
+<div class="slide" id="outline">
+<h1>Outline</h1>
+<ul class="incremental simple">
+<li>In silico toxicology methods</li>
+<li>Lazar framework</li>
+<li>Products and services</li>
+</ul>
+</div>
+<div class="slide" id="in-silico-methods">
+<h1>In silico methods</h1>
+<ul class="incremental simple">
+<li>Systems biology/molecular modeling</li>
+<li>Expert systems</li>
+<li>Data driven techniques</li>
+</ul>
+</div>
+<div class="slide" id="systems-biology-molecular-modeling">
+<h1>Systems biology/molecular modeling</h1>
+<p>Model individual events (e.g. receptor interactions, (de)toxification) of the <em>adverse outcome pathway</em></p>
+<ul class="incremental small green simple">
+<li>Mechanistic interpretation</li>
+</ul>
+<ul class="incremental small red simple">
+<li>Calculations/simulations may be very time consuming</li>
+<li>May require a lot of experimental data for parameterization</li>
+<li>Impossible to model mechanisms of complex toxicological endpoints</li>
+</ul>
+<p>Examples: VirtualToxLab/Biograf</p>
+</div>
+<div class="slide" id="expert-systems">
+<h1>Expert systems</h1>
+<p>Formalize expert knowledge about chemicals and toxicity mechanisms and create a software program</p>
+<ul class="incremental small green simple">
+<li>Mechanistic interpretation</li>
+</ul>
+<ul class="incremental small red simple">
+<li>Model creation very time consuming</li>
+<li>Many toxicity mechanisms are poorly understood or even unknown</li>
+<li>Error prone and hard to validate (strong tendency towards overfitting)</li>
+</ul>
+<p>Examples: Derek/Lhasa</p>
+</div>
+<div class="slide" id="data-driven">
+<h1>Data driven</h1>
+<p>Use all existing data for a particular endpoint and apply machine learning/QSAR algorithms in order to create a prediction model</p>
+<ul class="incremental small green simple">
+<li>Comparably fast</li>
+<li>Applicable for every endpoint with sufficient experimental data</li>
+<li>Sound validation possible</li>
+</ul>
+<ul class="incremental small red simple">
+<li>Applicability domain/model quality depends on experimental data</li>
+<li>Mechanistic relevance has to be extracted from models/descriptors/predictions</li>
+</ul>
+<p>Examples: Classical QSARs, Topkat, Multicase, lazar</p>
+</div>
+<div class="slide" id="lazy-structure-activity-relationships-lazar">
+<h1>Lazy-Structure-Activity Relationships (lazar)</h1>
+<p>Automated read across predictions</p>
+<ul class="incremental small simple">
+<li>Find <em>similar</em> compounds (=neighbors) with measured activities</li>
+<li>Create a local (Q)SAR model with neighbors as training compounds</li>
+<li>Make a prediction with this model</li>
+</ul>
+<p class="incremental">Lazar estimates the confidence (<em>applicability domain</em>) for each prediction</p>
+</div>
+<div class="slide" id="chemical-similarity">
+<h1>Chemical Similarity</h1>
+<p>Can be based on</p>
+<ul class="incremental simple">
+<li>Chemical structures</li>
+<li>Chemical properties</li>
+<li>Biological properties</li>
+<li>...</li>
+</ul>
+<p class="incremental">Lazar uses <em>activity specific similarities</em></p>
+</div>
+<div class="slide" id="activity-specific-similarities">
+<h1>Activity specific similarities</h1>
+<p>Consider only <em>relevant</em> (i.e. statistically significant) substructures, properties, ... for similarity calculations</p>
+<p>Algorithms for finding relevant substructures (by A. Maunz):</p>
+<ul class="simple">
+<li>Backbone refinement classes (BBRC)</li>
+<li>Latent structure mining (LAST)</li>
+</ul>
+</div>
+<div class="slide" id="http-lazar-in-silico-ch">
+<h1><a class="reference external" href="http://lazar.in-silico.ch">http://lazar.in-silico.ch</a></h1>
+<img alt="lazar-input.png" class="align-center" src="lazar-input.png" style="height: 13em;" />
+</div>
+<div class="slide" id="id1">
+<h1><a class="reference external" href="http://lazar.in-silico.ch">http://lazar.in-silico.ch</a></h1>
+<img alt="lazar-output1.png" class="align-center" src="lazar-output1.png" style="height: 13em;" />
+</div>
+<div class="slide" id="id2">
+<h1><a class="reference external" href="http://lazar.in-silico.ch">http://lazar.in-silico.ch</a></h1>
+<img alt="lazar-output2.png" class="align-center" src="lazar-output2.png" style="height: 13em;" />
+</div>
+<div class="slide" id="id3">
+<h1><a class="reference external" href="http://lazar.in-silico.ch">http://lazar.in-silico.ch</a></h1>
+<img alt="lazar-output3.png" class="align-center" src="lazar-output3.png" style="height: 13em;" />
+</div>
+<div class="slide" id="lazar-limitations">
+<h1>Lazar limitations</h1>
+<ul class="incremental simple">
+<li>Model quality depends on data quality</li>
+<li>Applicability domain depends on learning instances</li>
+</ul>
+</div>
+<div class="slide" id="in-silico-toxicology-gmbh">
+<h1>in silico toxicology gmbh</h1>
+<p>Open source software and algorithm development</p>
+<ul class="incremental simple">
+<li>Predictive toxicology and QSAR models</li>
+<li>Toxicological data mining</li>
+<li>Life science webservices and data warehouses</li>
+</ul>
+</div>
+<div class="slide" id="why-open-source">
+<h1>Why open source?</h1>
+<ul class="incremental simple">
+<li>Clear and unambiguous documentation of implemented algorithms essential for scientific software (also required by many regulatory guidelines)</li>
+<li>Collaboration with partners, projects and external contributors</li>
+<li>Establishment of international standards</li>
+<li>Security of investment</li>
+</ul>
+</div>
+<div class="slide" id="eu-research-projects-fp6-7">
+<h1>EU Research projects (FP6/7)</h1>
+<table class="small docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Sens-it-iv:</th><td class="field-body">Novel testing strategies for in vitro assessment of allergens</td>
+</tr>
+<tr class="field"><th class="field-name">Scarlet:</th><td class="field-body">Network on in silico methods for carcinogenicity and mutagenicity</td>
+</tr>
+<tr class="field"><th class="field-name">OpenTox:</th><td class="field-body">Open source framework for predictive toxicology</td>
+</tr>
+<tr class="field"><th class="field-name">ToxBank:</th><td class="field-body">Integrated data analysis and servicing of alternative testing methods in toxicology</td>
+</tr>
+<tr class="field"><th class="field-name">ModNanoTox:</th><td class="field-body">Modelling toxicity behaviour of engineered nanoparticles</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="slide" id="free-products-and-services">
+<h1>Free products and services</h1>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name" colspan="2">Lazar application:</th></tr>
+<tr class="field"><td>&nbsp;</td><td class="field-body"><a class="reference external" href="http://lazar.in-silico.ch">http://lazar.in-silico.ch</a></td>
+</tr>
+<tr class="field"><th class="field-name" colspan="2">OpenTox Webservices:</th></tr>
+<tr class="field"><td>&nbsp;</td><td class="field-body"><a class="reference external" href="http://webservices.in-silico.ch">http://webservices.in-silico.ch</a></td>
+</tr>
+<tr class="field"><th class="field-name">Source code:</th><td class="field-body"><a class="reference external" href="https://github.com/opentox">https://github.com/opentox</a></td>
+</tr>
+</tbody>
+</table>
+<p>Issue tracker, documentation, ...</p>
+</div>
+<div class="slide" id="commercial-products-and-services">
+<h1>Commercial products and services</h1>
+<ul class="incremental simple">
+<li>Lazar &quot;software as a service&quot; (SaaS): secure access for confidential predictions, batch predictions, ...</li>
+<li>Virtual appliances with lazar software for in-house/desktop installation</li>
+<li>Installation services</li>
+<li>Phone and email support</li>
+</ul>
+</div>
+<div class="slide" id="id4">
+<h1>Commercial products and services</h1>
+<ul class="incremental simple">
+<li>Virtual toxicity screening of compounds  and libraries</li>
+<li>Development of prediction models for new endpoints</li>
+<li>Scientific programming, contract research and consulting</li>
+</ul>
+</div>
+<div class="slide" id="contact">
+<h1>Contact</h1>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Web:</th><td class="field-body"><a class="reference external" href="http://www.in-silico.ch">http://www.in-silico.ch</a></td>
+</tr>
+<tr class="field"><th class="field-name">Email:</th><td class="field-body"><a class="reference external" href="mailto:helma&#64;in-silico.ch">helma&#64;in-silico.ch</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</body>
+</html>
