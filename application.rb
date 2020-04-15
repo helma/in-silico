@@ -28,6 +28,10 @@ get '/publications/?' do
 	haml :publications
 end
 
+get '/presentations/?' do
+  	haml :presentations
+end
+
 get '/blog/?' do
   #redirect "http://opentox.github.com"
 	haml :blog

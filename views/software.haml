@@ -1,6 +1,6 @@
-%dl
+%dl.dl-horizontal
   %dt
-    %a{ :href => "http://lazar.in-silico.ch/" } lazar
+    %a{ :href => "http://lazar.in-silico.ch/", :rel => "external" } lazar
 
   %dd
     %code lazar
@@ -9,13 +9,13 @@
     )
     takes a chemical structure as input and provides predictions for a variety of toxic properties.
     %code lazar
-    uses a automated and reproducible 
+    uses an automated and reproducible 
     %em read across
     procedure to calculate predictions. 
     Rationales for predictions, applicability domain estimations and validation results are presented in a clear graphical interface for the critical examination by toxicological experts.
     %code lazar
     is built on top of the 
-    %a{:href => "http://www.opentox.org"} OpenTox
+    %a{:href => "http://www.opentox.org", :rel => "external"} OpenTox
     framework.
 
     %br
@@ -24,12 +24,12 @@
       %ul
         %li
           from a free
-          %a{ :href => "http://lazar.in-silico.ch/" } webinterface,
+          %a{ :href => "http://lazar.in-silico.ch/", :rel => "external" } webinterface,
         %li
           by installing public
-          %a{ :href => "http://github.com/opentox/lazar"} source code
+          %a{ :href => "http://github.com/opentox/lazar", :rel => "external"} source code
           (
-          %a{ :href => "http://www.gnu.org/copyleft/gpl.html" } GNU License
+          %a{ :href => "http://www.gnu.org/copyleft/gpl.html", :rel => "external" } GNU License
           ) 
           from GitHub
         %li
@@ -37,7 +37,15 @@
           %a{ :href => '/commercial' } virtual appliance with commercial support
           for desktop or intranet installations
   %dt
-    %a{:href => "http://www.opentox.org"} OpenTox
+    %a{ :href => "https://nano-lazar.in-silico.ch/", :rel => "external" } nano-lazar
+
+  %dd
+    %code nano-lazar 
+    is a prototype application to do read-across predictions for nanoparticle toxicities. The application is developed in the 
+    %a{:href => "http://www.enanomapper.net", :rel => "external"} eNanoMapper 
+    project.
+  %dt
+    %a{:href => "http://www.opentox.org", :rel => "external"} OpenTox
   %dd
     OpenTox webservices are the building blocks for a predictive toxicology framework. We maintain webservices for
     %ul
@@ -53,14 +61,14 @@
     %p and have access to a variety of other OpenTox webservices (e.g. AMBIT database, QMRF/QPRF reporting services).
 
   %dt
-    %a{:href => "http://www.toxbank.org"} ToxBank
+    %a{:href => "http://www.toxbank.org", :rel => "external"} ToxBank
   %dd
-    provides the computational infrastructure for the SEURAT cluster of EU projects. We develop and maintain OpenTox compatible webservices for storing, searching and analysing experimental data.
+    ToxBank provides the computational infrastructure for the SEURAT cluster of EU projects. We develop and maintain OpenTox compatible webservices for storing, searching and analysing experimental data.
 
 All projects are 
 hosted under the 
-%a{ :href => "http://www.gnu.org/copyleft/gpl.html" } GNU License
+%a{ :href => "http://www.gnu.org/copyleft/gpl.html", :rel => "external" } GNU License
 at
-%a{ :href => "http://github.com/opentox"} GitHub.
+%a{ :href => "http://github.com/opentox", :rel => "external"} GitHub.
 
 / %a{:href => "http://en.wikipedia.org/wiki/Open_source_software"} open source
